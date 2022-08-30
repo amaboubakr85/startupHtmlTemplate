@@ -10,6 +10,8 @@ $('.slider .slider-container .owl-carousel').owlCarousel({
     0: {
       items: 1,
       nav: true,
+      stagePadding: 0,
+      dots: false,
     },
     600: {
       items: 3,
@@ -23,4 +25,17 @@ $('.slider .slider-container .owl-carousel').owlCarousel({
       margin: 10,
     },
   },
+})
+
+let themeBtn = document.querySelector('#theme')
+
+themeBtn.addEventListener('click', (e) => {
+  e.preventDefault()
+  if (e.target.innerText === 'Dark Mode') {
+    themeBtn.innerText = 'Light Mode'
+    document.querySelector('body').classList.add('dark')
+  } else {
+    themeBtn.innerText = 'Dark Mode'
+    document.querySelector('body').classList.remove('dark')
+  }
 })
